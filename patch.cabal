@@ -37,17 +37,17 @@ flag hlint
 library
   hs-source-dirs: src
   default-language: Haskell2010
-  build-depends: base >= 4.9 && < 4.19
+  build-depends: base >= 4.9 && < 4.21
                , constraints-extras >= 0.3 && < 0.5
-               , commutative-semigroups >= 0.0 && < 0.2
-               , containers >= 0.6 && < 0.7
+               , commutative-semigroups >= 0.0 && < 0.3
+               , containers >= 0.6 && < 0.8
                , dependent-map >= 0.3 && < 0.5
                , dependent-sum >= 0.6 && < 0.8
-               , lens >= 4.7 && < 5.3
+               , lens >= 4.7 && < 5.4
                , indexed-traversable >= 0.1 && < 0.2
                , semigroupoids >= 4.0 && < 7
                , transformers >= 0.5.6.0 && < 0.7
-               , witherable >= 0.3 && < 0.5
+               , witherable >= 0.3 && < 0.6
 
   if impl(ghc < 8.6)
     build-depends: base-orphans >= 0.8 && < 0.9
@@ -66,7 +66,7 @@ library
                  , Data.Semigroup.Additive
 
   ghc-options: -Wall -fwarn-redundant-constraints -fwarn-tabs
-  default-extensions: PolyKinds
+  default-extensions: PolyKinds, TypeOperators
 
   if flag(split-these)
     build-depends: these >= 1 && <1.3
